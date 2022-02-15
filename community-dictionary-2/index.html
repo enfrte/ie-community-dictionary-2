@@ -69,11 +69,13 @@ if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
 
 	<table style="max-width:800px;">
 		
-		<tr>
-			<th x-text="dic[0][0]"></th>
-			<th x-text="dic[0][1]"></th>
-		</tr>
-		
+		<template x-if="dic.length > 1">
+			<tr>
+				<th x-text="dic[0][0]"></th>
+				<th x-text="dic[0][1]"></th>
+			</tr>
+		</template>
+
 		<template x-if="searchResults.length > 1">
 			<template x-for="row in searchResults" :key="index">
 				<tr>
