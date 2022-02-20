@@ -90,7 +90,12 @@ if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
 		</template>
 
 		<template x-if="EnSearch.length < 2 && IeSearch.length < 2">
-			<tr><td colspan="2">Type at least 2 characters</td></tr>
+			<tr>
+				<td colspan="2">
+					Type at least 2 characters 
+					(currently not supported on Safari/iOS browsers)
+				</td>
+			</tr>
 		</template>
 
 	</table>
