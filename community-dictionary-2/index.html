@@ -69,14 +69,14 @@ if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
 
 	<table style="max-width:800px;">
 		
-		<template x-if="dic.length > 1">
+		<template x-if="dic.length > 0">
 			<tr>
 				<th x-text="dic[0][0]"></th>
 				<th x-text="dic[0][1]"></th>
 			</tr>
 		</template>
 
-		<template x-if="searchResults.length > 1">
+		<template x-if="searchResults.length > 0">
 			<template x-for="row in searchResults" :key="index">
 				<tr>
 					<td x-text="row[0]"></td>
@@ -115,7 +115,7 @@ function alpineInstance() {
 			this.searchResults = [];
 			let languageSearch = this.lang;
 
-			//console.log(this[languageSearch]);
+			//console.log('languageSearch:',this[languageSearch]);
 
 			if (this[languageSearch].length > 1) {
 				for (let j = 1; j < this.dic.length; j++) { // 1 = skip the db title
@@ -128,7 +128,7 @@ function alpineInstance() {
 						this.searchResults.push(this.dic[j]);
 					}
 				}
-				//console.log(this.searchResults);				
+				//console.log('searchResults:', this.searchResults);			
 			}
 
 		}
